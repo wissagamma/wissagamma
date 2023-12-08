@@ -26,5 +26,14 @@ I'm Wissa Gamma, a computer science student passionate about coding and explorin
 📊 **Top Languages:**
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=wissagamma&layout=compact)
 
-<!-- Feel free to add more sections or customize it according to your preferences! -->
+🚀 **Total Commits:** ![Total Commits](https://img.shields.io/github/commit-activity/m/wissagamma/wissagamma)
 
+🌟 **Stargazers:** ![Stargazers](https://img.shields.io/github/stars/wissagamma/wissagamma?style=social)
+
+👨‍💻 **Contributions:** ![Contributions](https://img.shields.io/github/contributions/wissagamma/wissagamma)
+
+📝 **Issues:** ![Issues](https://img.shields.io/github/issues/wissagamma/wissagamma)
+
+🏆 **GitHub Trophies:** ![Trophies](https://github-profile-trophy.vercel.app/?username=wissagamma)
+
+<!-- Feel free to add more sections or customize it according to your preferences! -->
