@@ -15,7 +15,7 @@ I'm Wissa Gamma, a computer science student passionate about coding and explorin
 📚 **Currently studying at:** Pamulang University
 
 📫 **How to reach me:**
-- Twitter: https://twitter.com/kicikdotcom
+- Twitter: [kicikdotcom](https://twitter.com/kicikdotcom)
 - Email: kicikireng@gmail.com
 
 ⚡ **Fun fact:** I enjoy solving algorithmic puzzles and creating small coding projects.
@@ -23,5 +23,8 @@ I'm Wissa Gamma, a computer science student passionate about coding and explorin
 📊 **GitHub Stats:**
 ![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=wissagamma&show_icons=true&hide_border=true&count_private=true)
 
+📊 **Top Languages:**
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=wissagamma&layout=compact)
 
 <!-- Feel free to add more sections or customize it according to your preferences! -->
+
