@@ -6,7 +6,7 @@ I'm Wissa Gamma, a computer science student passionate about coding and explorin
 - Web Development with React
 
 💡 **Skills:**
-- Python | JavaScript | HTML | CSS
+- Python | JavaScript | HTML | CSS | PHP
 - Data Analysis | Visualization
 - Problem Solving | Algorithms
 
