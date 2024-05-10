@@ -12,11 +12,9 @@ I'm Wissa Gamma, a computer science student passionate about coding and explorin
 
 👯 **I'm looking to collaborate on:** Exciting open source projects, hackathons
 
-📚 **Currently studying at:** Pamulang University
-
 📫 **How to reach me:**
 - Twitter: [kicikdotcom](https://twitter.com/kicikdotcom)
-- Email: kicikireng@gmail.com
+- Email: swtnws@gmail.com
 
 ⚡ **Fun fact:** I enjoy solving algorithmic puzzles and creating small coding projects.
 
