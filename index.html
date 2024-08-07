@@ -5,37 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Paket</title>
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden; /* Menonaktifkan scroll pada seluruh halaman */
+    html, body {
+            overflow: hidden; 
         }
-
         body {
             font-family: "Roboto", sans-serif;
-            background: linear-gradient(135deg, #0033cc, #66b3ff); /* Gradien biru */
+            background: linear-gradient(135deg, #0033cc, #66b3ff);
             color: #fff;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            overflow: hidden; 
         }
-
         .container {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 16px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             padding: 20px;
-            max-width: 90vw; /* Menggunakan unit vw */
-            max-height: 90vh; /* Menggunakan unit vh */
+            max-width: 90%;
             width: 100%;
-            height: auto; /* Memastikan tinggi konten tidak melampaui batas viewport */
             text-align: center;
             position: relative;
             color: #333;
             box-sizing: border-box;
-            overflow: auto; /* Menambahkan scroll jika konten melebihi container */
         }
-
         .container::before {
             content: "";
             position: absolute;
@@ -49,7 +45,6 @@
             z-index: 0;
             pointer-events: none;
         }
-
         .title {
             font-size: 24px;
             font-weight: 700;
@@ -58,7 +53,6 @@
             position: relative;
             z-index: 1;
         }
-
         .active-period {
             font-size: 16px;
             color: #333;
@@ -70,12 +64,10 @@
             position: relative;
             z-index: 1;
         }
-
         .section {
             margin-top: 20px;
             text-align: left;
         }
-
         .section .section-title {
             font-size: 20px;
             margin-bottom: 12px;
@@ -83,7 +75,6 @@
             position: relative;
             z-index: 1;
         }
-
         .item {
             font-size: 16px;
             padding: 8px 12px;
@@ -98,12 +89,10 @@
             z-index: 1;
             text-decoration: none; /* Menghilangkan garis bawah pada link */
         }
-
         .item:hover {
             background: #e2e6ea;
             transform: scale(1.02);
         }
-
         .note {
             font-size: 16px;
             font-weight: 600;
@@ -113,11 +102,9 @@
             position: relative;
             z-index: 1;
         }
-
         .note::before {
             content: "❗ ";
         }
-
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -129,11 +116,9 @@
                 transform: scale(1);
             }
         }
-
         .title {
             animation: pulse 1s infinite;
         }
-
         .dialog {
             display: none;
             position: fixed;
@@ -150,7 +135,6 @@
             width: 300px;
             box-sizing: border-box;
         }
-
         .dialog input {
             width: 100%;
             padding: 8px;
@@ -158,7 +142,6 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
         .dialog button {
             padding: 10px 20px;
             border: none;
@@ -168,11 +151,9 @@
             cursor: pointer;
             font-size: 16px;
         }
-
         .dialog button:hover {
             background-color: #0056b3;
         }
-
         .dialog .close {
             position: absolute;
             top: 10px;
@@ -261,7 +242,7 @@
     </div>
 
     <script>
-        const predefinedNumber = '6287722400030'; // Nomor yang sudah ditentukan
+        const predefinedNumber = '6287722400030'; 
 
         let currentSize = '';
         let currentPrice = '';
@@ -277,7 +258,7 @@
         }
 
         function sendMessage() {
-            const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; // Gunakan nomor yang ditentukan jika tidak ada input
+            const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; 
             if (!phoneNumber) {
                 alert('Harap masukkan nomor telepon.');
                 return;
@@ -285,7 +266,7 @@
 
             const message = `Mohon segera diproses%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize} ${currentPrice}`;
             const encodedMessage = encodeURIComponent(message);
-            const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; // Gunakan nomor yang ditentukan
+            const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; 
             window.open(url, '_blank');
             closeDialog();
         }
