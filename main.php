@@ -118,7 +118,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="title">XL FULL REGULER ++</div>
+        <div class="title">++</div>
         <div class="active-period">⌛ Masa Aktif 29/30 hari</div>
 
         <div class="section">
