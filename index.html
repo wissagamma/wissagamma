@@ -24,7 +24,6 @@
             padding: 20px;
             max-width: 90%;
             width: 100%;
-            overflow-y: auto;
             text-align: center;
             position: relative;
             color: #333;
@@ -116,6 +115,45 @@
         .title {
             animation: pulse 1s infinite;
         }
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dialog input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .dialog button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .dialog button:hover {
+            background-color: #0056b3;
+        }
+        .dialog .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -125,43 +163,43 @@
 
         <div class="section">
             <div class="section-title">📡 A:</div>
-            <a href="#" onclick="sendMessage('12GB', '20K')" class="item">
+            <a href="#" onclick="showDialog('12GB', '20K')" class="item">
                 <span>📦 12GB</span>
                 <span>20K</span>
             </a>
-            <a href="#" onclick="sendMessage('24GB', '30K')" class="item">
+            <a href="#" onclick="showDialog('24GB', '30K')" class="item">
                 <span>📦 24GB</span>
                 <span>30K</span>
             </a>
-            <a href="#" onclick="sendMessage('36GB', '40K')" class="item">
+            <a href="#" onclick="showDialog('36GB', '40K')" class="item">
                 <span>📦 36GB</span>
                 <span>40K</span>
             </a>
-            <a href="#" onclick="sendMessage('48GB', '50K')" class="item">
+            <a href="#" onclick="showDialog('48GB', '50K')" class="item">
                 <span>📦 48GB</span>
                 <span>50K</span>
             </a>
-            <a href="#" onclick="sendMessage('60GB', '60K')" class="item">
+            <a href="#" onclick="showDialog('60GB', '60K')" class="item">
                 <span>📦 60GB</span>
                 <span>60K</span>
             </a>
-            <a href="#" onclick="sendMessage('72GB', '70K')" class="item">
+            <a href="#" onclick="showDialog('72GB', '70K')" class="item">
                 <span>📦 72GB</span>
                 <span>70K</span>
             </a>
-            <a href="#" onclick="sendMessage('84GB', '80K')" class="item">
+            <a href="#" onclick="showDialog('84GB', '80K')" class="item">
                 <span>📦 84GB</span>
                 <span>80K</span>
             </a>
-            <a href="#" onclick="sendMessage('96GB', '90K')" class="item">
+            <a href="#" onclick="showDialog('96GB', '90K')" class="item">
                 <span>📦 96GB</span>
                 <span>90K</span>
             </a>
-            <a href="#" onclick="sendMessage('108GB', '100K')" class="item">
+            <a href="#" onclick="showDialog('108GB', '100K')" class="item">
                 <span>📦 108GB</span>
                 <span>100K</span>
             </a>
-            <a href="#" onclick="sendMessage('120GB', '110K')" class="item">
+            <a href="#" onclick="showDialog('120GB', '110K')" class="item">
                 <span>📦 120GB</span>
                 <span>110K</span>
             </a>
@@ -169,15 +207,15 @@
 
         <div class="section">
             <div class="section-title">📡 B:</div>
-            <a href="#" onclick="sendMessage('10GB', '18K')" class="item">
+            <a href="#" onclick="showDialog('10GB', '18K')" class="item">
                 <span>📦 10GB</span>
                 <span>18K</span>
             </a>
-            <a href="#" onclick="sendMessage('20GB', '25K')" class="item">
+            <a href="#" onclick="showDialog('20GB', '25K')" class="item">
                 <span>📦 20GB</span>
                 <span>25K</span>
             </a>
-            <a href="#" onclick="sendMessage('30GB', '35K')" class="item">
+            <a href="#" onclick="showDialog('30GB', '35K')" class="item">
                 <span>📦 30GB</span>
                 <span>35K</span>
             </a>
@@ -188,13 +226,40 @@
         <div class="note">Membeli = Setuju</div>
     </div>
 
+    <!-- Dialog untuk input nomor -->
+    <div id="dialog" class="dialog">
+        <span class="close" onclick="closeDialog()">&times;</span>
+        <h2>Masukkan Nomor Telepon</h2>
+        <input type="text" id="phoneNumber" placeholder="Nomor Telepon (contoh: 628xxxx)">
+        <button onclick="sendMessage()">Kirim</button>
+    </div>
+
     <script>
-        function sendMessage(size, price) {
-            const phoneNumber = '6287722400030';
-            const message = `*Mohon segera diproses*%A> Kuota ${size} ${price}`;
+        let currentSize = '';
+        let currentPrice = '';
+
+        function showDialog(size, price) {
+            currentSize = size;
+            currentPrice = price;
+            document.getElementById('dialog').style.display = 'block';
+        }
+
+        function closeDialog() {
+            document.getElementById('dialog').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            if (!phoneNumber) {
+                alert('Harap masukkan nomor telepon.');
+                return;
+            }
+
+            const message = `*Mohon segera diproses*%0A> Nomor : ${phoneNumber}%0A> Kuota : ${currentSize} ${currentPrice}`;
             const encodedMessage = encodeURIComponent(message);
-            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            const url = `https://wa.me/?text=${encodedMessage}`;
             window.open(url, '_blank');
+            closeDialog();
         }
     </script>
 </body>
