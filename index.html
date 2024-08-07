@@ -124,43 +124,43 @@
 
         <div class="section">
             <div class="section-title">📡 A:</div>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2012GB" class="item">
+            <a href="#" onclick="sendMessage('12GB', '20K')" class="item">
                 <span>📦 12GB</span>
                 <span>20K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2024GB" class="item">
+            <a href="#" onclick="sendMessage('24GB', '30K')" class="item">
                 <span>📦 24GB</span>
                 <span>30K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2036GB" class="item">
+            <a href="#" onclick="sendMessage('36GB', '40K')" class="item">
                 <span>📦 36GB</span>
                 <span>40K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2048GB" class="item">
+            <a href="#" onclick="sendMessage('48GB', '50K')" class="item">
                 <span>📦 48GB</span>
                 <span>50K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2060GB" class="item">
+            <a href="#" onclick="sendMessage('60GB', '60K')" class="item">
                 <span>📦 60GB</span>
                 <span>60K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2072GB" class="item">
+            <a href="#" onclick="sendMessage('72GB', '70K')" class="item">
                 <span>📦 72GB</span>
                 <span>70K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2084GB" class="item">
+            <a href="#" onclick="sendMessage('84GB', '80K')" class="item">
                 <span>📦 84GB</span>
                 <span>80K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2096GB" class="item">
+            <a href="#" onclick="sendMessage('96GB', '90K')" class="item">
                 <span>📦 96GB</span>
                 <span>90K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%20108GB" class="item">
+            <a href="#" onclick="sendMessage('108GB', '100K')" class="item">
                 <span>📦 108GB</span>
                 <span>100K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%20120GB" class="item">
+            <a href="#" onclick="sendMessage('120GB', '110K')" class="item">
                 <span>📦 120GB</span>
                 <span>110K</span>
             </a>
@@ -168,15 +168,15 @@
 
         <div class="section">
             <div class="section-title">📡 B:</div>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2010GB" class="item">
+            <a href="#" onclick="sendMessage('10GB', '18K')" class="item">
                 <span>📦 10GB</span>
                 <span>18K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2020GB" class="item">
+            <a href="#" onclick="sendMessage('20GB', '25K')" class="item">
                 <span>📦 20GB</span>
                 <span>25K</span>
             </a>
-            <a href="https://wa.me/6287722400030?text=Mohon%20segera%20diproses.%0A%3E%20Kuota%2030GB" class="item">
+            <a href="#" onclick="sendMessage('30GB', '35K')" class="item">
                 <span>📦 30GB</span>
                 <span>35K</span>
             </a>
@@ -186,5 +186,15 @@
         <div class="note">Paket Bisa Sewaktu-waktu Hilang</div>
         <div class="note">Membeli = Setuju</div>
     </div>
+
+    <script>
+        function sendMessage(size, price) {
+            const phoneNumber = '6287722400030';
+            const message = `Mohon segera diproses.%0A> Kuota ${size} ${price}`;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
