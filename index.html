@@ -264,7 +264,7 @@
                 return;
             }
 
-            const message = `Mohon segera diproses%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize} ${currentPrice}`;
+            const message = `Mohon segera diproses%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize}`;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; 
             window.open(url, '_blank');
