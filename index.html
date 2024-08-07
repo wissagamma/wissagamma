@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Paket</title>
     <style>
-    html, body {
-            overflow: hidden; 
+        html, body {
+            overflow: hidden; /* Menonaktifkan scroll pada seluruh halaman */
         }
         body {
             font-family: "Roboto", sans-serif;
-            background: linear-gradient(135deg, #0033cc, #66b3ff);
+            background: linear-gradient(135deg, #0033cc, #66b3ff); /* Gradien biru */
             color: #fff;
             margin: 0;
             padding: 0;
@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden; 
+            overflow: hidden; /* Menonaktifkan scroll */
         }
         .container {
             background: rgba(255, 255, 255, 0.9);
@@ -170,43 +170,43 @@
 
         <div class="section">
             <div class="section-title">📡 A:</div>
-            <a href="#" onclick="showDialog('12GB', '20K')" class="item">
+            <a href="#" onclick="showDialog('12GB')" class="item">
                 <span>📦 12GB</span>
                 <span>20K</span>
             </a>
-            <a href="#" onclick="showDialog('24GB', '30K')" class="item">
+            <a href="#" onclick="showDialog('24GB')" class="item">
                 <span>📦 24GB</span>
                 <span>30K</span>
             </a>
-            <a href="#" onclick="showDialog('36GB', '40K')" class="item">
+            <a href="#" onclick="showDialog('36GB')" class="item">
                 <span>📦 36GB</span>
                 <span>40K</span>
             </a>
-            <a href="#" onclick="showDialog('48GB', '50K')" class="item">
+            <a href="#" onclick="showDialog('48GB')" class="item">
                 <span>📦 48GB</span>
                 <span>50K</span>
             </a>
-            <a href="#" onclick="showDialog('60GB', '60K')" class="item">
+            <a href="#" onclick="showDialog('60GB')" class="item">
                 <span>📦 60GB</span>
                 <span>60K</span>
             </a>
-            <a href="#" onclick="showDialog('72GB', '70K')" class="item">
+            <a href="#" onclick="showDialog('72GB')" class="item">
                 <span>📦 72GB</span>
                 <span>70K</span>
             </a>
-            <a href="#" onclick="showDialog('84GB', '80K')" class="item">
+            <a href="#" onclick="showDialog('84GB')" class="item">
                 <span>📦 84GB</span>
                 <span>80K</span>
             </a>
-            <a href="#" onclick="showDialog('96GB', '90K')" class="item">
+            <a href="#" onclick="showDialog('96GB')" class="item">
                 <span>📦 96GB</span>
                 <span>90K</span>
             </a>
-            <a href="#" onclick="showDialog('108GB', '100K')" class="item">
+            <a href="#" onclick="showDialog('108GB')" class="item">
                 <span>📦 108GB</span>
                 <span>100K</span>
             </a>
-            <a href="#" onclick="showDialog('120GB', '110K')" class="item">
+            <a href="#" onclick="showDialog('120GB')" class="item">
                 <span>📦 120GB</span>
                 <span>110K</span>
             </a>
@@ -214,15 +214,15 @@
 
         <div class="section">
             <div class="section-title">📡 B:</div>
-            <a href="#" onclick="showDialog('10GB', '18K')" class="item">
+            <a href="#" onclick="showDialog('10GB')" class="item">
                 <span>📦 10GB</span>
                 <span>18K</span>
             </a>
-            <a href="#" onclick="showDialog('20GB', '25K')" class="item">
+            <a href="#" onclick="showDialog('20GB')" class="item">
                 <span>📦 20GB</span>
                 <span>25K</span>
             </a>
-            <a href="#" onclick="showDialog('30GB', '35K')" class="item">
+            <a href="#" onclick="showDialog('30GB')" class="item">
                 <span>📦 30GB</span>
                 <span>35K</span>
             </a>
@@ -242,14 +242,12 @@
     </div>
 
     <script>
-        const predefinedNumber = '6287722400030'; 
+        const predefinedNumber = '6287722400030'; // Nomor yang sudah ditentukan
 
         let currentSize = '';
-        let currentPrice = '';
 
-        function showDialog(size, price) {
+        function showDialog(size) {
             currentSize = size;
-            currentPrice = price;
             document.getElementById('dialog').style.display = 'block';
         }
 
@@ -258,7 +256,7 @@
         }
 
         function sendMessage() {
-            const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; 
+            const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; // Gunakan nomor yang ditentukan jika tidak ada input
             if (!phoneNumber) {
                 alert('Harap masukkan nomor telepon.');
                 return;
@@ -266,7 +264,7 @@
 
             const message = `Mohon segera diproses%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize}`;
             const encodedMessage = encodeURIComponent(message);
-            const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; 
+            const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; // Gunakan nomor yang ditentukan
             window.open(url, '_blank');
             closeDialog();
         }
