@@ -84,6 +84,7 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             position: relative;
             z-index: 1;
+            text-decoration: none; /* Menghilangkan garis bawah pada link */
         }
         .item:hover {
             background: #e2e6ea;
@@ -237,36 +238,35 @@
         <button onclick="sendMessage()">Kirim</button>
     </div>
 
- <script>
-    const predefinedNumber = '6287722400030'; // Nomor yang sudah ditentukan
+    <script>
+        const predefinedNumber = '6287722400030'; // Nomor yang sudah ditentukan
 
-    let currentSize = '';
-    let currentPrice = '';
+        let currentSize = '';
+        let currentPrice = '';
 
-    function showDialog(size, price) {
-        currentSize = size;
-        currentPrice = price;
-        document.getElementById('dialog').style.display = 'block';
-    }
-
-    function closeDialog() {
-        document.getElementById('dialog').style.display = 'none';
-    }
-
-    function sendMessage() {
-        const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; // Gunakan nomor yang ditentukan jika tidak ada input
-        if (!phoneNumber) {
-            alert('Harap masukkan nomor telepon.');
-            return;
+        function showDialog(size, price) {
+            currentSize = size;
+            currentPrice = price;
+            document.getElementById('dialog').style.display = 'block';
         }
 
-        const message = `*Mohon segera diproses*%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize} ${currentPrice}`;
-        const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; // Gunakan nomor yang ditentukan
-        window.open(url, '_blank');
-        closeDialog();
-    }
-</script>
+        function closeDialog() {
+            document.getElementById('dialog').style.display = 'none';
+        }
 
+        function sendMessage() {
+            const phoneNumber = document.getElementById('phoneNumber').value || predefinedNumber; // Gunakan nomor yang ditentukan jika tidak ada input
+            if (!phoneNumber) {
+                alert('Harap masukkan nomor telepon.');
+                return;
+            }
+
+            const message = `Mohon segera diproses%0D%0A> Nomor : ${phoneNumber}%0D%0A> Kuota : ${currentSize} ${currentPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/${predefinedNumber}?text=${encodedMessage}`; // Gunakan nomor yang ditentukan
+            window.open(url, '_blank');
+            closeDialog();
+        }
+    </script>
 </body>
 </html>
